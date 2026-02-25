@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "401618141935",
+    "project_id": "oroud-app",
+    "storage_bucket": "oroud-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:401618141935:android:ff17f0c6d8564ed039111a",
+        "android_client_info": {
+          "package_name": "com.oroud.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "401618141935-el77nu5ep6bdb4oj2hn9l2t6o5ui6ngo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.oroud.app",
+            "certificate_hash": "d37dba777f3e3cd82503f30282306eb7184fb3f6"
+          }
+        },
+        {
+          "client_id": "401618141935-77p2uebuer9a87ionv8qo9fk2rns1fuq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjpr77x4IMpR6ROO26B3FdlFuAMc9lyWo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "401618141935-77p2uebuer9a87ionv8qo9fk2rns1fuq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

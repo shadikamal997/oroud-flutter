@@ -2,22 +2,36 @@ import 'package:flutter/material.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/text_styles.dart';
 
-class DiscountBadge extends StatelessWidget {
-  final double percentage;
+enum DiscountBadgeSize { regular, small }
 
-  const DiscountBadge({super.key, required this.percentage});
+class DiscountBadge extends StatelessWidget {
+  final double? percentage; // 🔥 Now nullable
+  final DiscountBadgeSize size;
+
+  const DiscountBadge({
+    super.key,
+    this.percentage, // Optional
+    this.size = DiscountBadgeSize.regular,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final isSmall = size == DiscountBadgeSize.small;
+
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+      padding: EdgeInsets.symmetric(
+        horizontal: isSmall ? 6 : 10,
+        vertical: isSmall ? 4 : 6,
+      ),
       decoration: BoxDecoration(
-        color: AppColors.accentRed,
-        borderRadius: BorderRadius.circular(12),
+        color: AppColors.error,
+        borderRadius: BorderRadius.circular(isSmall ? 8 : 12),
       ),
       child: Text(
-        "-${percentage.toInt()}%",
-        style: AppTextStyles.discount,
+        "-${(percentage ?? 0).toInt()}%", // 🔥 Handle null
+        style: isSmall
+            ? AppTextStyles.discount.copyWith(fontSize: 11)
+            : AppTextStyles.discount,
       ),
     );
   }

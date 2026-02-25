@@ -12,8 +12,10 @@ class ApiClient {
     dio = Dio(
       BaseOptions(
         baseUrl: AppConfig.baseUrl,
-        connectTimeout: const Duration(seconds: 10),
-        receiveTimeout: const Duration(seconds: 10),
+        connectTimeout: const Duration(seconds: 30),
+        receiveTimeout: const Duration(seconds: 30),
+        contentType: 'application/json',
+        responseType: ResponseType.json,
       ),
     );
 
@@ -26,5 +28,17 @@ class ApiClient {
 
   Future<Response> post(String path, {dynamic data}) {
     return dio.post(path, data: data);
+  }
+
+  Future<Response> put(String path, {dynamic data}) {
+    return dio.put(path, data: data);
+  }
+
+  Future<Response> patch(String path, {dynamic data}) {
+    return dio.patch(path, data: data);
+  }
+
+  Future<Response> delete(String path) {
+    return dio.delete(path);
   }
 }
